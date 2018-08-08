@@ -20,7 +20,7 @@ function viewCart() {
   var statement = "In your cart, you have ";
   if(cart.length > 0){
     for (var i = 0; i < cart.length; i++){
-      if(i === cart.length - 1) {
+      if(i === cart.length - 1 && cart.length > 1) {
         statement += "and ";
       }
       statement += `${cart[i].itemName} at $${cart[i].itemPrice}`;
