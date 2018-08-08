@@ -19,10 +19,18 @@ function viewCart() {
   var cart = getCart();
   var statement = "In your cart, you have ";
   if(cart.length > 0){
-    for (var i = 0; i < cart.length -1; i++){
-      if(i )
-      statement += `${cart[i].itemName} at $${cart[i].itemPrice}`
+    for (var i = 0; i < cart.length; i++){
+      if(i === cart.length - 1) {
+        statement += "and ";
+      }
+      statement += `${cart[i].itemName} at $${cart[i].itemPrice}`;
+      if(i < cart.length - 1){
+        statement += ", ";
+      } else {
+        statement += ".";
+      }
     }
+    return statement;
   } else {
     return "Your shopping cart is empty.";
   }
